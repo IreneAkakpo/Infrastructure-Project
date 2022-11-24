@@ -1,7 +1,7 @@
 # Configuring internet-facing Load balancer Security Group
 resource "aws_security_group" "Web-ELB-SG" {
   name        = var.Web_ELB_SG_name
-  description = "Allow HTTP and SSH inbound traffic"
+  description = "Allow HTTP inbound traffic"
   vpc_id      = aws_vpc.Project-VPC.id
 
   # Inbound Rules

@@ -231,7 +231,7 @@ variable "mysql_skip_final_snapshot" {
 
 variable "multi-az-deployment" {
   description = "create a standby DB instance"
-  default     = false
+  default     = true
   type        = bool
 }
 
@@ -297,7 +297,7 @@ variable "enable_deletion_protection" {
 # EC2 AMI variable
 variable "instance-ami" {
   description = "making instance ami a variable"
-  default     = "ami-05a8c865b4de3b127" # eu-west-2
+  default     = "ami-0648ea225c13e0729" # eu-west-2
   type        = string
 
 }

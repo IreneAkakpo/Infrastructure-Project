@@ -6,7 +6,7 @@ resource "aws_lb" "External-lb" {
   ip_address_type            = var.ip_address_type
   load_balancer_type         = var.load_balancer_type
   security_groups            = [aws_security_group.Web-ELB-SG.id]
-  subnets                    = [aws_subnet.public-sub1.id, aws_subnet.public-sub2.id]
+  subnets                    = [aws_subnet.public-sub1.id,aws_subnet.public-sub2.id]
   enable_deletion_protection = var.enable_deletion_protection
 
   tags = {

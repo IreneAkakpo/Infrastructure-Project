@@ -1,3 +1,3 @@
 mysql_username = "Rennie"
 mysql_password = "wordpass"
-instance-key   = "JULY-KP"
+instance-key   = "July-KP"

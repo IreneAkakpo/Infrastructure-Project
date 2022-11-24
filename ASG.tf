@@ -16,6 +16,12 @@ resource "aws_autoscaling_group" "Webserver-autoscaling-group" {
   }
 }
 
+# Create a ALB Target Group attachment
+resource "aws_autoscaling_attachment" "asg_attachment_1" {
+  autoscaling_group_name = aws_autoscaling_group.Webserver-autoscaling-group.id
+  alb_target_group_arn    = aws_lb_target_group.Webtier-Target-group.arn
+}
+
 resource "aws_autoscaling_group" "Appserver-autoscaling-group" {
   name = "Appservers-ASG"
   /* availability_zones = [var.AZ-1,var.AZ-2] */
@@ -31,6 +37,14 @@ resource "aws_autoscaling_group" "Appserver-autoscaling-group" {
     version = "$Latest"
   }
 }
+
+
+# Create a ALB Target Group attachment
+resource "aws_autoscaling_attachment" "asg_attachment_2" {
+  autoscaling_group_name = aws_autoscaling_group.Appserver-autoscaling-group.id
+  alb_target_group_arn    = aws_lb_target_group.Apptier-Target-group.arn
+}
+
 
 /* # scale up policy
 resource "aws_autoscaling_policy" "scale_up" {
