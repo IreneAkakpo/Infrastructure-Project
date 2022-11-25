@@ -200,14 +200,14 @@ variable "mysql_instance_class" {
 
 variable "mysql_username" { #safer to keep in aws secret manager
   description = "making mysql username a variable"
-  sensitive   = true
+  default   = "Rennie"
   type        = string
 
 }
 
 variable "mysql_password" { #safer to keep in aws secret manager
   description = "making mysql password a variable"
-  sensitive   = true
+  default   = "wordpass"
   type        = string
 }
 
@@ -313,7 +313,7 @@ variable "instance-type" {
 # Making EC2 Key Name a variable
 variable "instance-key" { #safer to keep in aws secret manager
   description = "making instance key a variable"
-  sensitive   = true
+  default   = "Irene-KP"
   type        = string
 
 }
