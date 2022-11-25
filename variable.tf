@@ -310,10 +310,19 @@ variable "instance-type" {
 
 }
 
-# Making EC2 Key Name a varial
+# Making EC2 Key Name a variable
 variable "instance-key" { #safer to keep in aws secret manager
   description = "making instance key a variable"
   sensitive   = true
+  type        = string
+
+}
+
+
+# Making health check type a variable
+variable "health-check-type" {
+  description = "making health check type a variable"
+  default     = "ELB"
   type        = string
 
 }
